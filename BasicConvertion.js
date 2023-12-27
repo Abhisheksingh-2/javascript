@@ -25,3 +25,7 @@ let number1=true
 let numberOutput1=Boolean(number)
 console.log(numberOutput1)
 console.log(typeof(numberOutput1));
+
+
+
+
