@@ -1,2 +1,3 @@
 # javascript
-My First program in javascript
+My First program in js.
+hello
