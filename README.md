@@ -1,4 +1,3 @@
-# javascript
-My First program in javascript
-Author:ABHISHEK SINGH
+# Author:ABHISHEK SINGH
 HEllo, Everyone
+git status object.js
