@@ -1,3 +1,3 @@
-# Author:ABHISHEK SINGH
+# My First program in javascript
+Author:ABHISHEK SINGH
 HEllo, Everyone
-git status object.js

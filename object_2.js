@@ -45,3 +45,21 @@ console.log(Object.entries(student))
 // hasOwnProperty() : method is used to find the the property is present or not and indicating in boolean .
 console.log(student.hasOwnProperty("Student_ID"))
 console.log(student.hasOwnProperty("Student_phone"))
+
+// De-Structure Object: When we call the value of object always used to need (object_name.key) to call the value ,if we using the de-structure method is make it easy to call the value repeatly.
+
+const Club_member={
+    Member_name:"ABHISHEK SINGH",
+    Member_age:23,
+    fees:5000,
+    MemberShip_Expiry:"01-11-2025"
+}
+console.log(Club_member.Member_name)
+// We using de-structure method to make it easy.
+const {MemberShip_Expiry}=Club_member;
+// After create de-structure we directly call using the key name of the object.
+console.log(MemberShip_Expiry);
+// If key name is big then we create a small name of the key
+const{MemberShip_Expiry:expiry}=Club_member
+console.log(expiry)
+
