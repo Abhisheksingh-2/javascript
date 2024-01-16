@@ -25,4 +25,36 @@
     }
  }
 
+ let myArray=['Abhishek','Kanti','Aniket','Ravivijay','Yagraj'];
+ for (let index = 0; index < myArray.length; index++) {
+   const element = myArray[index];
+   console.log(element);
+   
+ }
 
+// while loop
+let index=0;
+let number=50;
+while (index<=50) {
+   if(index%2==0){
+      console.log("Even Number")
+   }
+   else{
+   console.log("Hello Everyone");
+   }
+   index++;
+}
+//Array
+let MyArray=['Nobita','Doraemon','Sisuzka','Giyan','Suniyo'];
+let arr=0;
+while (arr<MyArray.length) {
+   console.log(MyArray[arr]);
+   arr++;
+}
+// do while loop
+let Arr=0;
+let MYARRAY=['superman','Batman','Splash','Catwomen','WounderWomen']
+do {
+   console.log(MYARRAY[Arr]);
+   Arr++;
+} while (Arr<MYARRAY.length);
