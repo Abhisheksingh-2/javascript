@@ -50,3 +50,31 @@ for (const value in NewObject) {
         console.log("Hello! Everyone")
     }
 programming.forEach(greeting);
+programming.forEach( (key,index,arr)=>{  // for each statement define many variable index,array list of the data type.
+console.log(key,index,arr);
+})
+
+//we create a array and define object within the array.
+const MySkills=[{
+    LanguageName:'Cpp',
+    FileExtension:'cpp'
+},
+{
+    LanguageName:'JavaScript',
+    FileExtension:'js'
+},{
+    LanguageName:'Java',
+    FileExtension:'java'
+},{
+    LanguageName:'python',
+    FileExtension:'py'
+},{
+    LanguageName:'Ruby',
+    FileExtension:'rb'
+}];
+MySkills.forEach((key)=>{
+    console.log(key);
+    console.log(key.LanguageName);
+    console.log(key.FileExtension);
+   
+})
