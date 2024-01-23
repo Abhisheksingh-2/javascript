@@ -49,4 +49,52 @@ DOM is basically the representation of the same HTML document but in a tree-like
                                                **********                               ********                          ********
                                                ** CLASS**                               **TEXT**                          **TEXT**
                                                **********                               ********                          ********
-<COMMIT ************************************************************************************************************************************** ></COMMIT>                                              
+<COMMIT ************************************************************************************************************************************** ></COMMIT>    
+
+Properties of DOM:
+Window Object: Window Object is object of the browser which is always at top of the hierarchy.  It is like an API that is used to set and access all the properties and methods of the browser. It is automatically created by the browser.
+Document object: When an HTML document is loaded into a window, it becomes a document object. The ‘document’ object has various properties that refer to other objects which allow access to and modification of the content of the web page. If there is a need to access any element in an HTML page, we always start with accessing the ‘document’ object. Document object is property of window object.
+Form Object: It is represented by form tags.
+Link Object: It is represented by link tags.
+Anchor Object: It is represented by a href tags.
+Form Control Elements:: Form can have many control elements such as text fields, buttons, radio buttons, checkboxes, etc.
+
+Methods of Document Object:
+write(“string”): Writes the given string on the document.
+getElementById(): returns the element having the given id value.
+getElementsByName(): returns all the elements having the given name value.
+getElementsByTagName(): returns all the elements having the given tag name.
+getElementsByClassName(): returns all the elements having the given class name.
+
+
+What DOM is not? 
+The Document Object Model is not a binary description where it does not define any binary source code in its interfaces.
+The Document Object Model is not used to describe objects in XML or HTML whereas the DOM describes XML and HTML documents as objects.
+The Document Object Model is not represented by a set of data structures; it is an interface that specifies object representation.
+The Document Object Model does not show the criticality of objects in documents i.e it doesn’t have information about which object in the document is appropriate to the context and which is not.
+
+
+Levels of DOM: 
+Level 0: Provides a low-level set of interfaces.
+
+Level 1: DOM level 1 can be described in two parts: CORE and HTML.
+
+CORE provides low-level interfaces that can be used to represent any structured document.
+HTML provides high-level interfaces that can be used to represent HTML documents.
+
+Level 2: consists of six specifications: CORE2, VIEWS, EVENTS, STYLE, TRAVERSAL, and RANGE.
+
+CORE2: extends the functionality of CORE specified by DOM level 1.
+VIEWS: views allows programs to dynamically access and manipulate the content of the document.
+EVENTS: Events are scripts that are either executed by the browser when the user reacts to the web page.
+STYLE: allows programs to dynamically access and manipulate the content of style sheets.
+TRAVERSAL: This allows programs to dynamically traverse the document.
+RANGE: This allows programs to dynamically identify a range of content in the document.
+
+Level 3: consists of five different specifications: CORE3, LOAD and SAVE, VALIDATION, EVENTS, and XPATH.
+
+CORE3: extends the functionality of CORE specified by DOM level 2.
+LOAD and SAVE: This allows the program to dynamically load the content of the XML document into the DOM document and save the DOM Document into an XML document by serialization.
+VALIDATION: This allows the program to dynamically update the content and structure of the document while ensuring the document remains valid.
+EVENTS: extends the functionality of Events specified by DOM Level 2.
+XPATH: XPATH is a path language that can be used to access the DOM tree.
