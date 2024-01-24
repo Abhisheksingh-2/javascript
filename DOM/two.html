@@ -15,6 +15,9 @@
     <div class="day">Friday</div>
     <div class="day">Saturday</div>
     <div class="day">Sunday</div>
+    <div id="para">
+        <p>This is a Paragraph</p></div>
+
     </div>
 </body>
     <script>
@@ -22,7 +25,22 @@
          console.log(week);
          console.log(week.children);
          console.log(week.children[1]);
-    </script>
-    
+         console.log(week.parentElement);
+         week.children[3].style.color='red';
+         console.log(week.children[3].innerHTML);
+         console.log(week.firstElementChild.nextElementSibling.nextElementSibling);
+         console.log(week.lastElementChild);
+         console.log(week.lastElementChild.previousElementSibling)
+         const dayOne=document.querySelector('.day')
+         console.log(dayOne);
+         console.log(dayOne.parentElement);
+         console.log(dayOne.style.color='blue')
 
+         console.log("Node: ",week.childNodes)
+         const paragraph=document.querySelector('#para')
+         console.log(paragraph)
+         console.log(paragraph.innerHTML)
+         console.log(paragraph.innerText)
+
+    </script>   
 </html>
