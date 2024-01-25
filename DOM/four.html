@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourth part of DOM Learning </title>
+</head>
+<body style="background-color: bisque; color: blueviolet; padding: 20xp;">
+     <ul class="Coding">
+    <li> Java </li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(CodeName){
+        const li=document.createElement('li')
+        li.innerHTML=`${CodeName}`
+        document.querySelector('.Coding').appendChild(li)
+    }
+addLanguage('python')
+addLanguage('JavaScript')
+addLanguage('Cpp')
+addLanguage('C programming')
+addLanguage('Ruby')
+
+function optimalApproach(codeName){
+    const li=document.createElement('li')
+    li.appendChild(document.createTextNode(`${codeName}`))
+document.querySelector('.Coding').appendChild(li)
+}
+optimalApproach('Go Lang')
+optimalApproach('MySql')
+
+// EDIT
+const changecode=document.querySelector("li:nth-child(3)")
+console.log(changecode)
+const newli=document.createElement('li')
+newli.appendChild(document.createTextNode('javaScript'))
+changecode.replaceWith(newli)
+
+// Remove
+const rm=document.querySelector('li:last-child');
+rm.remove();
+
+</script>
+</html>
