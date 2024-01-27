@@ -1,0 +1,13 @@
+nav {
+    background-color:grey;
+    padding: 10px 30px;
+    margin-inline: none;
+    
+   
+ 
+}
+a{
+padding-inline: 20%;
+text-align: center;
+border: 2px solid #212121;
+}
