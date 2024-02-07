@@ -1,0 +1,42 @@
+form {
+  border: 3px solid none;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #0f0e0e;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.9;
+}
+body {
+  color:blanchedalmond;
+  background-image:url('https://wallpaperbat.com/img/455751-harvey-nichols-opens-its-new-look-menswear-destination-retail-store-layout-retail-design-retail-store-design.jpg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  margin: 15% ;   
+  
+  
+}
+
+
