@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css"/>
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="login">
+        <div class="text-center">
+                  
+                  <h3><b> Have A Nice Day !</b></h3>
+                </div>
+        <form method="post" action="">
+        
+            <b><h1 id="heading"> Welcome User to RamVita Store</h1>
+            <h2 id="heading">Sign up</h2></b>
+            <label for="name"></label>
+            <input type="text" name="user-name" id="name"placeholder="Name" required><br><br>
+            <label for="email"></label>
+            <input type="text" name="user-name" id="email" placeholder="Email" required><br><br>
+            <span class="error email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Please enter a valid email</p>
+            </span>
+            <label for="Phone"></label>
+            <input type="text" name="user-phone" id="Phone" placeholder="Phone" required><br><br>
+            <label for="pass"></label>
+            <input type="Password" name="user-password" id="pass" placeholder="Password" required><br><br>
+            <span class="error email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Please enter atleast 8 character with number,symbol,small and capital letter.</p>
+            </span>
+            <label for="pass"></label>
+            <input type="Password" name="user-password" id="passw" placeholder="Re-password" required>
+            <p id="message"></p>
+            <br><br>
+            <button >Sign up</button>
+        </form>  
+    </div>
+</body>
+<script>
+let message=document.querySelector('#message');
+message.addEventListener('click',function(e){
+    let password=document.getElementById('pass').value;
+    let Repassword=document.getElementById('passw').value;
+    if(password===Repassword){
+     e.innerText="Password is match";
+    }
+    else{
+        e.innerText="Password does not Match";
+    }
+})
+</script>
+</html>
