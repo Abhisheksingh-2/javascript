@@ -71,3 +71,53 @@ greeting()();
              [Arguments] { '0': 5, '1': 6, '2': 8, '3': 2, '4': 4, '5': 9 }
              34        */
              
+             function func(){
+                func=21;
+                console.log(func);
+             }
+             func();
+
+             //Smarter/New version of function
+             //Arrow function is used to less code and get more.
+
+              const hello=()=>{
+                console.log(`Hello, Everyone`);
+              }
+hello();
+
+//function with multiple Arguments and return
+
+ addingNumber=(a,b,c)=>{
+    console.log("inside sum numbers");
+    return a+b+c;
+}
+console.log(addingNumber(7,4,2));
+
+//function with no return
+
+greeting=(name)=>{
+console.log(`Hello, ${name}`);
+}
+greeting('Abhishek');
+
+sum=(a,b)=>a*b;  // multiple return is not allow it is used only one statement.
+console.log(sum(3,4));
+
+/*1.Argument are not allow in arrow function.
+2.there is no arrow type property.
+3.can't used with new keyword.
+4. binding of 'this' is different.
+
+determine it is even or odd.*/
+determine=(num)=>{
+    if(num%2===0){
+        console.log(`It is Even Number ${num}`);
+    }
+    else{
+        console.log(`It is Odd Number ${num}`)
+    }
+}
+determine(29);
+
+ternary=(num)=>(num%2==0)?"EVEN":"ODD";
+console.log(ternary(20));
