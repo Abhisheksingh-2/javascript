@@ -40,3 +40,43 @@ const fun=(arr)=>{
     return ("Result of ArraySum=",sum)
 }
 console.log(fun(arr_ele));
+//.......................................Array Method..................................
+
+//pop(): it is used to remove the last element from the array list.
+arr1=[2,3,4,5,6,7,8,9];
+console.log(arr1.pop());
+console.log(arr1);
+//Push(): it is used to add element at last position of the array list.
+arr1.push(1);
+console.log(arr1);
+
+//remove from first position.
+arr2=[1,2,3,4,5];
+arr2.shift();
+console.log(arr2);
+//add the first position.
+arr2.unshift(10);
+console.log(arr2);
+
+//concatition method
+arr3=arr1.concat(arr2);
+console.log(typeof arr3);// this show the object type.
+console.log(arr3);
+console.log(arr3.length);
+
+arr4=arr1+arr2;
+console.log(typeof arr4);// this show the string type.
+console.log(arr4);
+
+// join method
+let indian_heroes=['shaktiman','hero','hanuman','flyingMan'];
+result=indian_heroes.join();
+console.log(result);
+console.log(typeof result);
+
+// splice() and slice().
+
+arr5=[1,2,3,4,5,6,7];
+arr5.splice(2,4);
+console.log(arr5);
+
