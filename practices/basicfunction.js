@@ -121,3 +121,101 @@ determine(29);
 
 ternary=(num)=>(num%2==0)?"EVEN":"ODD";
 console.log(ternary(20));
+
+//.................................<ASSIGNMENT>........................................
+//1.
+const grade=(num)=>{
+
+            if(num>90){
+                return ('A Grade');
+            }
+        
+           else if(num>70 && num<=90){
+                return ('B Grade');
+            }
+        
+        else if(num>=50 && num<=70){
+                return ('C Grade');
+            }
+        
+         else {
+
+                return ('F Grade');
+         }
+}
+console.log(grade(70));
+//2.
+
+const generate_number=(num1,num2)=>{
+for(i=num1;i<num2;i++){
+  console.log(i+1);
+}
+}
+console.log(generate_number(10,25));
+
+//3.
+
+const ternary_operator=(num)=>{
+    return num>0? "positive":num<0? "negative":"zero";
+}
+console.log(ternary_operator(-3));
+
+//4.
+
+const logicFunction=(name,pass)=>{
+    if(name==='admin'&& pass==='12345'){
+console.log('Login successful');
+    }
+    else{
+        console.log('Invalid credential');
+    }
+}
+logicFunction('abhi','12345');
+logicFunction('admin','12345');
+
+//5.
+const e_commerce=(payment_method)=>{
+ switch(payment_method){
+    case 'credit':
+        console.log(`2% fess processing ${payment_method}` );
+        break;
+        case 'debit':
+            console.log(`1.5% fess processing ${payment_method}` );
+            break;
+            case  'paypal':
+                console.log(`3% fess processing ${payment_method}` );
+                break;
+                default:
+                    console.log('Invalid method Please use Valid method');
+ }
+}
+e_commerce('debit');
+e_commerce('paypal');
+e_commerce('credit');
+e_commerce('gpay');
+//6.
+
+const weather_application=(curr_temp)=> {
+    let celcius=((curr_temp-32)*5/9);
+   const result=celcius>30? "Hot":"Moderate";
+   return result;
+}
+console.log(weather_application(100));
+console.log(weather_application(89));
+console.log(weather_application(70));
+//7.
+
+function sum_numbers(num){
+i=1;
+let result=0;
+do{
+result=result+i;
+i++;
+}
+while(i<=num)
+return result;
+
+}
+console.log(sum_numbers(20));
+console.log(sum_numbers(30));
+console.log(sum_numbers(25));
