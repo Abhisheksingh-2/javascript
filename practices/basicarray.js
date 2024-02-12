@@ -77,6 +77,49 @@ console.log(typeof result);
 // splice() and slice().
 
 arr5=[1,2,3,4,5,6,7];
-arr5.splice(2,4);
+//arr5.splice(2,4);
 console.log(arr5);
+//using splice method we add the element in the array list
+
+arr5.splice(2,2,8,9);
+console.log(arr5);
+console.log(typeof arr5);
+
+//reverse() method
+
+let dc_hero=['superman','batman','catwomen','devil','thounderman','deadpool'];
+dc_hero.reverse();
+console.log(dc_hero);
+
+//sorting
+arr6=[8,9,4,2,5,7,1,0];
+//arr6.sort();
+
+arr6.sort(function(){
+    for(i=0;i<arr6.length;i++){
+    
+        if(arr6[i]<arr6[i+1]){
+            temp=arr6[i];
+            arr6[i]=arr6[i+1];
+            arr6[i+1]=temp;
+            console.log(arr6);
+        }
+        //temp++;
+      
+    }
+})
+console.log(arr6);
+arr6.sort((a,b)=>a-b);
+console.log(arr6);
+//convert array to string
+arr7=new Array(3,5,2,6,1,8);
+str=arr7.toString();
+console.log(str);
+console.log(typeof str);
+//isArray() it is used to determine it is array or not
+arrr8=[1,2,3,4,5,6,7,8,9,0];
+console.log(Array.isArray(arr));
+
+str='I am ABHISHEK SINGH';
+console.log(Array.isArray(str));
 
