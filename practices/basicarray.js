@@ -123,3 +123,69 @@ console.log(Array.isArray(arr));
 str='I am ABHISHEK SINGH';
 console.log(Array.isArray(str));
 
+//......................................OBJECTS.........................................
+
+ 
+function emp(id,name,salary){
+   this.id=id;
+    this.name=name;
+    this.salary=salary;
+}
+const emp_obj=new emp(001,'ABHISHEK SINGH',80000);
+console.log(emp_obj);
+// insert the new field
+const person={};
+person.name='ABHISHEk';
+person.hobby='football';
+person.age=21;
+console.log(person);
+person.name='ANIKET'
+console.log(person);
+// delete the field
+
+delete person['age'];
+console.log(person);
+
+// key and values
+const database={
+    name:'ABHISHEK',
+    class: {
+        section:'4-A',
+        course:'B.Tech',
+        branch:'CSE'
+    },
+    roll:'STU_01',
+    age:21
+    };
+    console.log(Object.keys(database));
+    console.log(Object.values(database));
+    console.log(Object.entries(database));
+    console.log(database);
+
+    //assign method: it is used to add new field exiting object.
+  
+    data_new=Object.assign({},database,{tution_fees:62500});
+    console.log(data_new);
+
+    //adding new field using [.] dot method.
+
+    database.jobType='remote';
+    console.log(database);
+
+    console.log(Object.getOwnPropertyDescriptors(database));
+
+    Object.defineProperties(database,{
+        name:{
+                value:'ABHISHEk',
+                enumerable:false
+            }
+        
+    })
+
+
+    for(k in database){
+    console.log(k);
+}
+console.log(Object.getOwnPropertyDescriptors(database));
+
+
