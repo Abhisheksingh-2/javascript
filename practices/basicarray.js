@@ -187,5 +187,3 @@ const database={
     console.log(k);
 }
 console.log(Object.getOwnPropertyDescriptors(database));
-
-
