@@ -53,3 +53,14 @@ console.log(`Hello,I'm ${this.name} and I'm ${this.age} years old.`);
 
 
 console.log(person.introduce);
+//4.
+
+const unique_item=[3,6,9,1,7,4];
+unique_item.map(()=>{
+    let square;
+    for(i=0;i<unique_item.length;i++){
+square=unique_item[i]*unique_item[i];
+console.log(square),console.log(unique_item[i]);
+    }
+    
+})
