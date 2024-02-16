@@ -56,3 +56,82 @@ Aggregation: Aggregation operations process data records
 and return the computed results. It is similar to the 
 GROUPBY clause in SQL. A few aggregation expressions are 
 sum, avg, min, max, etc.
+
+1. It is store data in the forms of collections and 
+ documents.
+2. Gained Popularity in mid 2000's.
+Documents in MongoDB: looks like JSON type Structure.
+
+JSON is a format for storing and transporting data.
+
+JSON is often used when data is sent from a server to a 
+web page.
+What is JSON?
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data interchange format
+JSON is language independent *
+JSON is "self-describing" and easy to understand.
+{
+"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]
+}
+Types of Scaling in MongoDB
+In MongoDB, scaling can be achieved through different 
+approaches, each addressing specific aspects of resource 
+allocation and accommodating different requirements. The 
+primary types of scaling in MongoDB include:
+
+1. Horizontal Scaling(Scaling Down)
+Horizontal scaling involves distributing the data across 
+multiple servers or nodes. Each server is known as shard 
+and it is responsible for storing a portion of the data. 
+Horizontal scaling is achieved through a mechanism 
+called sharding. Sharding which involves partitioning a 
+database into smaller and manageable pieces called 
+shards. Each shard is hosted on a separate server or 
+replica set and together they form a sharded cluster.
+
+Horizontal
+Output
+
+Key components and concepts of horizontal scaling in 
+MongoDB (sharding) include:
+
+Shard: A shard is an individual server or a replica set 
+which stores a portion of the dataset. Each shard is 
+responsible for managing a subset of data.
+Sharded Cluster: The entire database consisting of 
+multiple shards, config servers, and mongos routers. 
+Config servers store metadata about the sharded cluster.
+Shard Key: A field in the document that is used to 
+determine the distribution of data across shards. The 
+selection of shard key is imporant and enhaces the 
+efficiency of horizontal scaling.
+2. Vertical Scaling(Scaling Up)
+
+Vertical scaling include the increasing capacity of a 
+single server by adding more CPU, RAM, or storage 
+resources. In MongoDB, it means upgrading our hardware 
+to a more powerful machine. While this approach can be 
+effective to a certain manner, it has its limitations.
+
+Key points about vertical scaling are:
+
+Upgrading Hardware: Vertical scaling typically allow 
+moving to a more powerful server by upgrading its 
+components. For example, we can replace a dual-core CPU 
+with a quad-core CPU and add more RAM or use faster 
+storage devices.
+
+Increased Capacity: The goal of vertical scaling is to 
+increase the overall capacity of a single server to 
+handle more concurrent connections and process more 
+transactions or retrieve larger amounts of data.
+
+Downtime: Depending on the specific upgrades, vertical 
+scaling may require downtime or a temporary interruption 
+of service, especially when replacing critical 
+components like the CPU or motherboard.
