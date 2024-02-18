@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up page</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome User, to RamVita Store</h1>
+    
+        <form action="#">
+            <div class="field namefield">
+                <div class="input-field">
+                    
+            <input type="text"  placeholder="Username" >
+                </div><br>
+                <div class="field  emailfield">
+                <div class="input-field invalid">
+                   
+            <input type="text"  class="email" placeholder="Enter your Email" >
+                </div>
+                    <span class="error email-error">
+                    <i class="bx bx-error-alt error-icon"></i> 
+                    <p class="error-text">Please enter a Valid email</p>  
+                </span>
+            </div>
+            <div class="field passwordfield">
+            <div class="input-field">
+            
+        <input type="password"  placeholder="Create-Password" class="newpass" >
+        <i class='bx bxs-hide show-hide'></i>
+            </div>
+            <span class="error password-error">
+                <i class="bx bx-error-alt error-icon"></i> 
+                <p class="error-text">Please enter atleast 8 character with number,symbol,small and capital letter.</p>  
+            </span>
+            </div>
+            <div class="field confirmfield">
+            <div class="input-field">
+               
+        <input type="password"  placeholder="Confirm-Password" class="confirmpass" >
+        <i class='bx bxs-hide show-hide'></i>        
+    </div>
+            <span class="error confirmpassword-error1">
+                <i class="bx bx-error-alt error-icon"></i> 
+                <p class="error-text">Password Don't Match</p>  
+            </span>
+            </div>
+    <div class="input-field button">
+<input type="submit" value="Signup">
+    </div>
+        </form>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
