@@ -43,3 +43,21 @@ newdb> db.Students.renameCollection("stu_new")
 { ok: 1 }
 newdb> show collections
 stu_new
+
+
+newdb> db.Students.remove({});
+DeprecationWarning: Collection.remove() is deprecated. 
+Use deleteOne, deleteMany, findOneAndDelete, or 
+bulkWrite.
+{ acknowledged: true, deletedCount: 0 }
+newdb> show collections
+stu_new
+newdb> db.Students.drop();
+true
+newdb> show collections;
+stu_new
+newdb> db.stu_new.drop();
+true
+newdb> show collections;
+
+newdb>
