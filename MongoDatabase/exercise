@@ -1,0 +1,45 @@
+Microsoft Windows [Version 10.0.22631.3155]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\LENOVO>mongosh
+Current Mongosh Log ID: 65d47f6647ce31d2c602cd28
+
+test> show databases;
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+test>   use admi
+switched to db admi
+admi> create database abhi
+Uncaught:
+SyntaxError: Missing semicolon. (1:6)
+
+> 1 | create database abhi
+    |       ^
+  2 |
+
+admi> createdatabase abhi
+Uncaught:
+SyntaxError: Missing semicolon. (1:14)
+
+> 1 | createdatabase abhi
+    |               ^
+
+newdb> db.reateCollection("Students");
+TypeError: db.reateCollection is not a function
+newdb> db.createCollection("Students");
+{ ok: 1 }
+newdb> show collections
+Students
+newdb> db.students.renameCollecion("stu_new")
+TypeError: db.students.renameCollecion is not a function
+newdb> db.Students.renameCollecion("stu_new")
+TypeError: db.Students.renameCollecion is not a function
+newdb> db.Students.renameCollection("stu_new")
+{ ok: 1 }
+newdb> show collections
+stu_new
