@@ -60,4 +60,68 @@ newdb> db.stu_new.drop();
 true
 newdb> show collections;
 
-newdb>
+test> show databases;
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+test> use config
+switched to db config
+config> show collections;
+system.sessions
+config> use newdb
+switched to db newdb
+newdb> var InformationUser={}
+
+newdb> var InformationUser={
+... UserName:"ABHISHEK SINGH",
+... UserId:"User12345"
+... };
+
+newdb> InformationUser;
+{ UserName: 'ABHISHEK SINGH', UserId: 'User12345' }
+newdb> db.User.insertOne(InformationUser);
+{
+  acknowledged: true,
+  insertedId: ObjectId('65d57a7c7aff14ee26322913')
+}
+newdb> db.User.insertMany([{UserName:"ANIKET",
+UserId:"User90876"},{UserName:"ADARSH",
+UserId:"User87676"}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65d57b4e7aff14ee26322914'),
+    '1': ObjectId('65d57b4e7aff14ee26322915')
+  }
+}
+newdb> show collection
+MongoshInvalidInputError: [COMMON-10001] 'collection' is 
+not a valid argument for "show".
+newdb> show collections;
+User
+newdb> db.User.find();
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  }
+]
+newdb> db.User.find({UserName:'ADARSH'})
+[
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  }
+]
