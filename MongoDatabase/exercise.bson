@@ -1,0 +1,127 @@
+Microsoft Windows [Version 10.0.22631.3155]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\LENOVO>mongosh
+Current Mongosh Log ID: 65d47f6647ce31d2c602cd28
+
+test> show databases;
+admin   40.00 KiB
+config  60.00 KiB
+local   40.00 KiB
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+test>   use admi
+switched to db admi
+admi> create database abhi
+Uncaught:
+SyntaxError: Missing semicolon. (1:6)
+
+> 1 | create database abhi
+    |       ^
+  2 |
+
+admi> createdatabase abhi
+Uncaught:
+SyntaxError: Missing semicolon. (1:14)
+
+> 1 | createdatabase abhi
+    |               ^
+
+newdb> db.reateCollection("Students");
+TypeError: db.reateCollection is not a function
+newdb> db.createCollection("Students");
+{ ok: 1 }
+newdb> show collections
+Students
+newdb> db.students.renameCollecion("stu_new")
+TypeError: db.students.renameCollecion is not a function
+newdb> db.Students.renameCollecion("stu_new")
+TypeError: db.Students.renameCollecion is not a function
+newdb> db.Students.renameCollection("stu_new")
+{ ok: 1 }
+newdb> show collections
+stu_new
+
+
+newdb> db.Students.remove({});
+DeprecationWarning: Collection.remove() is deprecated. 
+Use deleteOne, deleteMany, findOneAndDelete, or 
+bulkWrite.
+{ acknowledged: true, deletedCount: 0 }
+newdb> show collections
+stu_new
+newdb> db.Students.drop();
+true
+newdb> show collections;
+stu_new
+newdb> db.stu_new.drop();
+true
+newdb> show collections;
+
+test> show databases;
+admin    40.00 KiB
+config  108.00 KiB
+local    40.00 KiB
+test> use config
+switched to db config
+config> show collections;
+system.sessions
+config> use newdb
+switched to db newdb
+newdb> var InformationUser={}
+
+newdb> var InformationUser={
+... UserName:"ABHISHEK SINGH",
+... UserId:"User12345"
+... };
+
+newdb> InformationUser;
+{ UserName: 'ABHISHEK SINGH', UserId: 'User12345' }
+newdb> db.User.insertOne(InformationUser);
+{
+  acknowledged: true,
+  insertedId: ObjectId('65d57a7c7aff14ee26322913')
+}
+newdb> db.User.insertMany([{UserName:"ANIKET",
+UserId:"User90876"},{UserName:"ADARSH",
+UserId:"User87676"}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65d57b4e7aff14ee26322914'),
+    '1': ObjectId('65d57b4e7aff14ee26322915')
+  }
+}
+newdb> show collection
+MongoshInvalidInputError: [COMMON-10001] 'collection' is 
+not a valid argument for "show".
+newdb> show collections;
+User
+newdb> db.User.find();
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  }
+]
+newdb> db.User.find({UserName:'ADARSH'})
+[
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  }
+]
