@@ -195,3 +195,101 @@ newdb> db.User.find({UserName:/A.*/});
     UserId: 'User87676'
   }
 ]
+
+newdb> db.User.find().limit(2);
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  }
+]
+newdb> db.User.find().pretty();
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  },
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  }
+]
+newdb> db.User.find().skip(2);
+[
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  },
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  }
+]
+newdb> db.User.find().sort({UserName:1});
+[
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  },
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  }
+]
+newdb> db.User.find().sort({UserName:-1});
+[
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  },
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  }
+]
+newdb> db.User.find().count();
+4
