@@ -125,3 +125,73 @@ newdb> db.User.find({UserName:'ADARSH'})
     UserId: 'User87676'
   }
 ]
+
+newdb>  var NestedUser={
+... name:"Abhishek",
+... job:{
+... title:"Programmer",
+... salary:123456
+... }
+... };
+
+newdb> NestedUser
+{ name: 'Abhishek', job: { title: 'Programmer', salary: 
+123456 } }
+newdb> show collections;
+User
+newdb> db.User.insertOne(NestedUser);
+{
+  acknowledged: true,
+  insertedId: ObjectId('65d57f8b7aff14ee26322916')
+}
+newdb> db.User.find();
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  },
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  }
+]
+newdb> db.User.find({'job title':'Programmer'});
+
+newdb> db.User.find({'job.title':'Programmer'});
+[
+  {
+    _id: ObjectId('65d57f8b7aff14ee26322916'),
+    name: 'Abhishek',
+    job: { title: 'Programmer', salary: 123456 }
+  }
+]
+newdb> db.User.find({UserName:/A.*/});
+[
+  {
+    _id: ObjectId('65d57a7c7aff14ee26322913'),
+    UserName: 'ABHISHEK SINGH',
+    UserId: 'User12345'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322914'),
+    UserName: 'ANIKET',
+    UserId: 'User90876'
+  },
+  {
+    _id: ObjectId('65d57b4e7aff14ee26322915'),
+    UserName: 'ADARSH',
+    UserId: 'User87676'
+  }
+]
