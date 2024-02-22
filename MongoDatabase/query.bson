@@ -1,0 +1,151 @@
+test> use newdb
+switched to db newdb
+newdb> show collections;
+DataBase
+User
+newdb> var StudentDatabase={ Stu_Name:'Abhishek', Stu_Age:22, Stu_Branch:'B.Tech', Stu_fees:45000 };
+
+newdb> db.DataBase.insertOne(StudentDatabase);
+{
+  acknowledged: true,
+  insertedId: ObjectId('65d5883c72cdac305e64f012')
+}
+
+newdb> db.DataBase.insertMany([{Stu_Name:"Kanti",Stu_Age:24,Stu_Branch:"IT",Stu_fees:40000},{Stu_Name:"Rishabh",Stu_Age:22,Stu_Branch:"B.Com",Stu_fees:25000},{Stu_Name:"Akash",Stu_Age:25,Stu_Branch:"Artificial Intelligence",Stu_fees:50000}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('65d5898a72cdac305e64f013'),
+    '1': ObjectId('65d5898a72cdac305e64f014'),
+    '2': ObjectId('65d5898a72cdac305e64f015')
+  }
+}
+newdb> db.DataBase.find();
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Tech',
+    Stu_fees: 45000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f015'),
+    Stu_Name: 'Akash',
+    Stu_Age: 25,
+    Stu_Branch: 'Artificial Intelligence',
+    Stu_fees: 50000
+  }
+]
+newdb> db.DataBase.distinct('Stu_Name');
+[ 'Abhishek', 'Akash', 'Kanti', 'Rishabh' ]
+newdb> db.DataBase.find(Stu_fees:($lt:45000));
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:25)
+
+> 1 | db.DataBase.find(Stu_fees:($lt:45000));
+    |                          ^
+  2 |
+
+newdb> db.DataBase.find({Stu_fees:{$lt:45000}});
+[
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  }
+]
+newdb> db.DataBase.find({Stu_fees:{$lte:45000}});
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Tech',
+    Stu_fees: 45000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  }
+]
+newdb> db.DataBase.find({Stu_fees:{$gt:45000}});
+[
+  {
+    _id: ObjectId('65d5898a72cdac305e64f015'),
+    Stu_Name: 'Akash',
+    Stu_Age: 25,
+    Stu_Branch: 'Artificial Intelligence',
+    Stu_fees: 50000
+  }
+]
+
+newdb> db.DataBase.find({Stu_Age:{$all:[22]}});
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Tech',
+    Stu_fees: 45000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  }
+]
+newdb> db.DataBase.find({Stu_Branch:{$in:['IT','B.Com']}});
+[
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  }
+]
+
+
