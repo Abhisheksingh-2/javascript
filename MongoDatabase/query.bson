@@ -148,4 +148,112 @@ newdb> db.DataBase.find({Stu_Branch:{$in:['IT','B.Com']}});
   }
 ]
 
+newdb> db.DataBase.update({Stu_Branch:'B.Tech'},{$set :{Stu_Branch:'CSE'}},{upsert:true});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+newdb> db.DataBase.find({Stu_Branch:{$in:['IT','CSE']}});
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'CSE',
+    Stu_fees: 45000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  }
+]
+newdb> db.DataBase.updateOne({_id:1},{$push:{numbers:6}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+newdb> db.DataBase.find();
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'CSE',
+    Stu_fees: 45000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f015'),
+    Stu_Name: 'Akash',
+    Stu_Age: 25,
+    Stu_Branch: 'Artificial Intelligence',
+    Stu_fees: 50000
+  }
+]
+newdb> db.DataBase.updateOne({Stu_Age:22},{$push:{numbers:23}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+newdb> db.DataBase.find();
+[
+  {
+    _id: ObjectId('65d5883c72cdac305e64f012'),
+    Stu_Name: 'Abhishek',
+    Stu_Age: 22,
+    Stu_Branch: 'CSE',
+    Stu_fees: 45000,
+    numbers: [ 23 ]
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f013'),
+    Stu_Name: 'Kanti',
+    Stu_Age: 24,
+    Stu_Branch: 'IT',
+    Stu_fees: 40000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f014'),
+    Stu_Name: 'Rishabh',
+    Stu_Age: 22,
+    Stu_Branch: 'B.Com',
+    Stu_fees: 25000
+  },
+  {
+    _id: ObjectId('65d5898a72cdac305e64f015'),
+    Stu_Name: 'Akash',
+    Stu_Age: 25,
+    Stu_Branch: 'Artificial Intelligence',
+    Stu_fees: 50000
+  }
+]
 
+two more query which is used to delete the document
+1.deleteOne();
+2.deleteMany();
