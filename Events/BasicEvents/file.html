@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Basic</title>
+</head>
+<body>
+    <h1>Event Basic</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function(){
+        console.log('Abhishek singh');
+    },2000)
+    const h1=document.querySelector("h1");
+    const changeText=function(){
+    h1.innerHTML="Good Morning! Event Users";
+    }
+   const stop= setTimeout(changeText,2000);
+
+   const stops=document.querySelector("#stop");
+   stops.addEventListener("click",function(){
+    clearTimeout(stop);
+    console.log('Stopped');
+   });
+
+</script>
+</html>
