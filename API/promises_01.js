@@ -42,3 +42,27 @@ console.log(response);
 }
 
 consumePromise_01();
+
+async function getAllUsers(){
+  try {
+    const response=await fetch('https://jsonplaceholder.typicode.com/users');
+    const data=await response.json();
+    console.log(data);  
+  } catch (error) {
+    console.log("E:",error);
+  }
+}
+
+getAllUsers();
+
+fetch('https://api.github.com/users/Abhisheksingh-2')
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>console.log('E:',error))
+.finally(()=>console.log('The promise is either resolved or rejected'));
+
+ 
