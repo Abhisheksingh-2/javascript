@@ -82,3 +82,36 @@ syntax:
 condition ? true : false;*/
 let student_mark=45;
 student_mark>=34?console.log("Pass"):console.log("Fail");
+
+function getFee(isMember) {
+    return isMember ? '$2.00' : '$10.00';
+  }
+  
+  console.log(getFee(true));
+  // Expected output: "$2.00"
+  
+  console.log(getFee(false));
+  // Expected output: "$10.00"
+  
+  console.log(getFee(null));
+  // Expected output: "$10.00"
+
+  const greeting = (person) => {
+    const name = person ? person.name : "stranger";
+    return `Howdy, ${name}`;
+  };
+  
+  console.log(greeting({ name: "Alice" })); // "Howdy, Alice"
+  console.log(greeting(null)); 
+
+     
+function gfg() { 
+    // JavaScript to illustrate  
+    // Conditional operator  
+    let PMarks = 40 
+    let result = (PMarks > 39) ? 
+        "Pass" : "Fail"; 
+  
+    console.log(result); 
+} 
+gfg();
