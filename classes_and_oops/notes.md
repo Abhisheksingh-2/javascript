@@ -52,5 +52,34 @@ inheritance.
 
 -Mozilla Developer Network
 
+Abstraction: Abstraction means displaying only essential 
+information and hiding the details. Data abstraction 
+refers to providing only essential information about the 
+data to the outside world, hiding the background details 
+or implementation. 
 
+Encapsulation: The process of wrapping properties and 
+functions within a single unit is known as 
+encapsulation. 
+
+Inheritance: It is a concept in which some properties 
+and methods of an Object are being used by another 
+Object. Unlike most of the OOP languages where classes 
+inherit classes, JavaScript Objects inherit Objects i.e. 
+certain features (property and methods) of one object 
+can be reused by other Objects
+
+Polymorphism: Polymorphism is one of the core concepts 
+of object-oriented programming languages. Polymorphism 
+means the same function with different signatures is 
+called many times. In real life, for example, a boy at 
+the same time may be a student, a class monitor, etc. So 
+a boy can perform different operations at the same time. 
+Polymorphism can be achieved by method overriding and 
+method overloading
+
+JavaScript is best known for web page development but it 
+is also used in a variety of non-browser environments. 
+You can learn JavaScript from the ground up by following 
+this JavaScript Tutorial and JavaScript Examples.
  
