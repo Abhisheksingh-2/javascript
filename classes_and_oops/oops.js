@@ -40,4 +40,3 @@ console.log(userTwo.constructor);
 console.log( userOne instanceof User);
 console.log(userTwo instanceof Object);
 
-
