@@ -47,3 +47,33 @@ const user={
 
  teacher.__proto__=user;
 
+ // Modern Syntax
+
+ Object.setPrototypeOf(TeachingSupport,teacher);
+
+ let anotheruserName='HelloEveryone      ';
+
+ String.prototype.trueLength=function(){
+    console.log(`${this}`);
+    console.log(`True Length is: ${this.trim().length}`);
+ }
+ anotheruserName.trueLength();
+ 'ABHISHEK'.trueLength();
+ 'icetea'.trueLength();
+
+ //..........................................CALL.......................................
+ 
+ function setUser(username){
+   this.username=username;
+   console.log('Called');
+ }
+
+ function createUser(username,email,password){
+      setUser.call(this,username);
+
+      this.email=email;
+      this.password=password;
+ }
+
+ const usercall= new createUser('ABHISHEK','Abhisheksinghthakur728@bbdu.ac.in','abhi2345!@');
+ console.log(usercall);
