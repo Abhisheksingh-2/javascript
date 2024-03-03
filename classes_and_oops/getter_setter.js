@@ -49,3 +49,26 @@ const user=new User1('savita123@gmail.com','32132');
 console.log(user.email);
 console.log(user.password);
 
+//Object based code.................define properties getter and setter.................................
+
+const fUnction={
+    _email:'kanti123@gmail.com',
+    _password:'as87654',
+
+    get email(){
+        return this._email.toUpperCase()
+    },
+    set email(value){
+this._email=value;
+    },
+    get password(){
+        return this._password.toUpperCase()
+    },
+    set password(value){
+ this._password=value;
+    }
+
+}
+const fun=Object.create(fUnction);
+console.log(fun.email);
+console.log(fun.password);
