@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Closure</title>
+</head>
+<body style="background-color:#313131;">
+    
+</body >
+<script>
+   function init() {
+     let  name = "Mozilla"; // name is a local variable created by init
+      function displayName() {
+    // displayName() is the inner function, that forms the closure
+        console.log(name); // use variable declared in the parent function
+  }
+
+  displayName();
+}
+
+init(); 
+console.log("outer",name);
+
+function outer(){
+    let username='ABHISHEK'
+    function inner(){
+        console.log("inner",username);
+    }
+    inner();
+}
+outer();
+console.log("Outer",username);
+</script>
+</html>
