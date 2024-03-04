@@ -9,27 +9,63 @@
     
 </body >
 <script>
-   function init() {
-     let  name = "Mozilla"; // name is a local variable created by init
-      function displayName() {
-    // displayName() is the inner function, that forms the closure
-        console.log(name); // use variable declared in the parent function
+
+    //...............LEXICAL SCOPING>.........................//
+//    function init() {
+//      let  name = "Mozilla"; // name is a local variable created by init
+//       function displayName() {
+//     // displayName() is the inner function, that forms the closure
+//         console.log(name); // use variable declared in the parent function
+//   }
+
+//   displayName();
+// }
+
+// init(); 
+// console.log("outer",name);
+
+// function outer(){
+//     let username='ABHISHEK'
+//     function inner(){
+//         let password="123@!"
+//         console.log("inner",username);
+//         console.log("inner",password);
+//     }
+//     function innerTwo(){
+//         console.log("InnerTwo",username);
+//         console.log("InnerTwo",password);//child not share information to other child node but it take it from parents.
+
+//     }
+//     inner();
+//     innerTwo();
+// }
+// outer();
+// console.log("Outer",username);
+
+/* init() creates a local variable called name and a function called displayName().
+ The displayName() function is an inner function that is defined inside init() and 
+ is available only within the body of the init() function. Note that the displayName() 
+ function has no local variables of its own. However, since inner functions have access
+  to the variables of outer functions, displayName() can access the variable name declared
+ in the parent function, init()
+
+ Traditionally (before ES6), JavaScript only had two kinds of scopes: function scope and global scope
+ . Variables declared with var are either function-scoped or global-scoped, depending on whether they 
+ are declared within a function or outside a function. This can be tricky, because blocks with curly braces do not create scopes:
+ */
+
+//..............................CLOSURE...............................//
+
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
   }
-
-  displayName();
+  return displayName;
 }
 
-init(); 
-console.log("outer",name);
+const myFunc = makeFunc(); 
+myFunc();
 
-function outer(){
-    let username='ABHISHEK'
-    function inner(){
-        console.log("inner",username);
-    }
-    inner();
-}
-outer();
-console.log("Outer",username);
 </script>
 </html>
