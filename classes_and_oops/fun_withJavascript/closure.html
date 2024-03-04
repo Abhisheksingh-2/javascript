@@ -6,41 +6,43 @@
     <title>Learning Closure</title>
 </head>
 <body style="background-color:#313131;">
+    <button id="orange">Orange</button>
+  <button id="green">Green</button>
     
 </body >
 <script>
 
     //...............LEXICAL SCOPING>.........................//
-//    function init() {
-//      let  name = "Mozilla"; // name is a local variable created by init
-//       function displayName() {
-//     // displayName() is the inner function, that forms the closure
-//         console.log(name); // use variable declared in the parent function
-//   }
+   function init() {
+     let  name = "Mozilla"; // name is a local variable created by init
+      function displayName() {
+    // displayName() is the inner function, that forms the closure
+        console.log(name); // use variable declared in the parent function
+  }
 
-//   displayName();
-// }
+  displayName();
+}
 
-// init(); 
-// console.log("outer",name);
+init(); 
+console.log("outer",name);
 
-// function outer(){
-//     let username='ABHISHEK'
-//     function inner(){
-//         let password="123@!"
-//         console.log("inner",username);
-//         console.log("inner",password);
-//     }
-//     function innerTwo(){
-//         console.log("InnerTwo",username);
-//         console.log("InnerTwo",password);//child not share information to other child node but it take it from parents.
+function outer(){
+    let username='ABHISHEK'
+    function inner(){
+        let password="123@!"
+        console.log("inner",username);
+        console.log("inner",password);
+    }
+    function innerTwo(){
+        console.log("InnerTwo",username);
+        console.log("InnerTwo",password);//child not share information to other child node but it take it from parents.
 
-//     }
-//     inner();
-//     innerTwo();
-// }
-// outer();
-// console.log("Outer",username);
+    }
+    inner();
+    innerTwo();
+}
+outer();
+console.log("Outer",username);
 
 /* init() creates a local variable called name and a function called displayName().
  The displayName() function is an inner function that is defined inside init() and 
@@ -67,5 +69,26 @@ function makeFunc() {
 const myFunc = makeFunc(); 
 myFunc();
 
+</script>
+<script>
+    
+    // document.querySelector('#orange').addEventListener('click',function(e){
+    //     const body=document.querySelector('body');
+    //     body.style.backgroundColor='Orange';
+    // });
+    // document.querySelector('#green').addEventListener('click',function(e){
+    //     const body=document.querySelector('body');
+    //     body.style.backgroundColor='Green';
+    // });
+
+    function clickHandler(color){
+//document.body.style.backgroundColor=`${color}`
+
+return function(){
+    document.body.style.backgroundColor=`${color}`
+}
+    }
+    document.getElementById('orange').onclick=clickHandler("orange");
+    document.getElementById('green').onclick=clickHandler("green");
 </script>
 </html>
